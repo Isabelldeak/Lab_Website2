@@ -1,0 +1,27 @@
+
+
+DFS(vertex):
+  Waterfound = False
+  count = 0
+  vertex.visited = True
+  for (x = 0 to vertex.adjacent.end)
+    if(!vertex.adjacent[x].v.visited)
+      if(vertex.adjacent[x] == vertex)
+        count = count + 1
+        index = x
+        Waterfound = True
+        vertex.adjacent[x].visited = True
+
+  if(Waterfound == False)
+     pondSize.append(count)
+     count = 0
+     DFS(vertex)
+   else
+     Waterfound = True
+     DFS(vertex.adjacent[index])
+  return pondSize
+
+
+   depthFirstSearch(0)
+    vertex = search(0)
+    DFS(0)
